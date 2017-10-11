@@ -8,7 +8,15 @@ export class AutorizacionService {
   }
 
   public login = (email, password) => {
-      console.log('Metodo de login')
+    this.angularFireAuth.auth.signInWithEmailAndPassword(email,password)
+    .then((response)=>{
+      alert('usuario logeado ok');
+      console.log(response);
+    })
+    .catch((error)=>{
+      alert('Un error ha ocurrido');
+      console.log(error)
+    })
   }
 
   public registro = (email, password) => {
