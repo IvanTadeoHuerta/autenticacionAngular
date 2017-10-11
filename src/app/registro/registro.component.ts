@@ -7,10 +7,14 @@ import { AutorizacionService } from "../services/autorizacion.service";
   styles: []
 })
 export class RegistroComponent implements OnInit {
-
+  registro:any = {};
  
   constructor(private autorozacionService: AutorizacionService) { 
-    this.autorozacionService.registro('email','123');
+  
+  }
+
+  registrar(){
+    this.autorozacionService.registro(this.registro.email,this.registro.password);
   }
 
   ngOnInit() {

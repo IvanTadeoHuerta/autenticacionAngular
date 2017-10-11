@@ -12,7 +12,15 @@ export class AutorizacionService {
   }
 
   public registro = (email, password) => {
-    console.log('Metodo de registro')
+    this.angularFireAuth.auth.createUserWithEmailAndPassword(email,password)
+    .then((response)=>{
+      alert('usuario registrado ok');
+      console.log(response);
+    })
+    .catch((error)=>{
+      alert('Un error ha ocurrido');
+      console.log(error)
+    })
 }
 
   

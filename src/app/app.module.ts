@@ -6,7 +6,7 @@ import { LoginComponent } from './login/login.component';
 import { RegistroComponent } from './registro/registro.component';
 import { RouterModule, Routes } from '@angular/router';
 import { AutorizacionService } from "./services/autorizacion.service";
-
+import { FormsModule } from '@angular/forms';
 
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
@@ -32,6 +32,7 @@ const appRoutes: Routes = [
     RegistroComponent
   ],
   imports: [
+    FormsModule,
     RouterModule.forRoot(appRoutes),
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireDatabaseModule,
