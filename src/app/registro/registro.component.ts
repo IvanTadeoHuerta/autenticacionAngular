@@ -14,6 +14,7 @@ export class RegistroComponent implements OnInit {
   }
 
   registrar(){
+    
     this.autorozacionService.registro(this.registro.email,this.registro.password);
   }
 
