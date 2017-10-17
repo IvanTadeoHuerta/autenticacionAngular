@@ -4,7 +4,7 @@ import { AngularFireAuth } from "angularfire2/auth";
 @Injectable()
 export class AutorizacionService {
   constructor(private angularFireAuth: AngularFireAuth){
-
+    this.isLogged();
   }
 
   public login = (email, password) => {
@@ -29,6 +29,10 @@ export class AutorizacionService {
       alert('Un error ha ocurrido');
       console.log(error)
     })
+}
+
+public isLogged(){
+  return this.angularFireAuth.authState;
 }
 
   
