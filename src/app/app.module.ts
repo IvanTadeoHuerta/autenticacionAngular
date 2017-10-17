@@ -24,7 +24,7 @@ export const firebaseConfig = {
 
 const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
-  { path: 'registro', component: RegistroComponent },
+  { path: 'registro', component: RegistroComponent},
   { path: 'formulario', component: FormularioComponent, canActivate: [MyGuardiaService] }
 ]
 

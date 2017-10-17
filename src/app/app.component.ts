@@ -22,5 +22,9 @@ export class AppComponent {
            this.loggedIn = false
         })
   }
+
+  cerrarSesion(){
+      this.autorizacionService.logout();
+  }
   
 }

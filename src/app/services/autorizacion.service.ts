@@ -1,17 +1,18 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from "angularfire2/auth";
+import {Router} from "@angular/router";
 
 @Injectable()
 export class AutorizacionService {
-  constructor(private angularFireAuth: AngularFireAuth){
+  constructor(private angularFireAuth: AngularFireAuth,private router:Router){
     this.isLogged();
   }
 
   public login = (email, password) => {
     this.angularFireAuth.auth.signInWithEmailAndPassword(email,password)
     .then((response)=>{
-      alert('usuario logeado ok');
-      console.log(response);
+       console.log('login correcto')
+       this.router.navigate(['formulario']);
     })
     .catch((error)=>{
       alert('Un error ha ocurrido');
@@ -34,6 +35,13 @@ export class AutorizacionService {
 public isLogged(){
   return this.angularFireAuth.authState;
 }
+
+
+public logout(){
+        this.angularFireAuth.auth.signOut();
+        console.log('cerrando sesion...')
+        this.router.navigate(['login']);
+    }
 
   
 
